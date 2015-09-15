@@ -1,3 +1,5 @@
+![indigo child theme](https://github.com/Zeaksblog/indigo-bootville-lite/blob/master/screenshot.png)
+
 # Indigo Bootville Lite child theme #
 
 Indigo is a child theme for Bootville Lite, a free Bootstrap WordPress theme based on Underscores [Zeaks Themes](http://themes.zeaks.org).
@@ -12,5 +14,3 @@ Indigo is a child theme for Bootville Lite, a free Bootstrap WordPress theme bas
 ## Other Notes ##
 
 style.css contains a few optional sections that have been commented. Search for "optional" and uncomment to use
-
-![indigo child theme](https://github.com/Zeaksblog/indigo-bootville-lite/blob/master/screenshot.png)
