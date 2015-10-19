@@ -1,5 +1,10 @@
 Indigo Bootville Lite child theme changelog.
 
+v1.2 - Updated funtions to reflect parent theme updates
+	   Added child theme text domain
+	   Made translation ready
+	   Updated text domain name
+
 v1.1 - Added jumbotron homepage template
 	   Added border radius to Nav menu
 	   Added optional CSS, search style.css for "optional" and uncomment to use.

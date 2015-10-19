@@ -5,18 +5,22 @@
 add_action( 'wp_enqueue_scripts', 'my_dequeue_styles', 11 );
 
 function my_dequeue_styles() {
-    wp_dequeue_style( 'bootstrap-styles' );
+    wp_dequeue_style( 'bootville-lite-bootstrap-styles' );
 }
-
+// add child theme text domain
+add_action( 'after_setup_theme', 'indingo_bootville_lite_theme_setup' );
+function indingo_bootville_lite_theme_setup() {
+    load_child_theme_textdomain( 'indingo-bootville-lite', get_stylesheet_directory() . '/languages' );
+}
 
 //Import parent styles add other stylesheets.
 function indigo_bootville_lite_enqueue_parent_styles() {
 	
 	// load bootstrap CSS first
-	wp_enqueue_style( 'parent-bootstrap-style', get_template_directory_uri().'/css/bootstrap.min.css' );
+	wp_enqueue_style( 'indingo-bootville-lite-parent-bootstrap-style', get_template_directory_uri().'/css/bootstrap.min.css' );
 	
 	// load parent theme CSS
-	wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
+	wp_enqueue_style( 'indingo-bootville-lite-parent-style', get_template_directory_uri().'/style.css' );
 	
 	// load child theme CSS last
 	wp_enqueue_style( 'indigo-bootville-lite-child-style', get_stylesheet_uri(),11 );
@@ -28,7 +32,7 @@ function indigo_bootville_lite_enqueue_parent_styles() {
 	wp_enqueue_style('indigo-bootville-lite-google-fonts');
 	
 	// load back to top JS
-	wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/js/toplink.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'indingo-bootville-lite-main-js', get_stylesheet_directory_uri() . '/js/toplink.js', array('jquery'), '1.0.0', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'indigo_bootville_lite_enqueue_parent_styles' );
@@ -40,7 +44,7 @@ function indigo_bootville_lite_widgets_init() {
 
 	// Jumbotron widgets first row
 	register_sidebar(array(
-		'name'          => __( 'Jumbotron 1', 'bootville' ),
+		'name'          => __( 'Jumbotron 1', 'bootville-lite' ),
 		'id'            => 'jumbotron-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s panel panel-default">',
 		'after_widget'  => '</aside>',
@@ -49,7 +53,7 @@ function indigo_bootville_lite_widgets_init() {
 	) );
 
 	register_sidebar(array(
-		'name'          => __( 'Jumbotron 2', 'bootville' ),
+		'name'          => __( 'Jumbotron 2', 'bootville-lite' ),
 		'id'            => 'jumbotron-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s panel panel-default">',
 		'after_widget'  => '</aside>',
@@ -58,7 +62,7 @@ function indigo_bootville_lite_widgets_init() {
 	) );
 
 	register_sidebar(array(
-		'name'          => __( 'Jumbotron 3', 'bootville' ),
+		'name'          => __( 'Jumbotron 3', 'bootville-lite' ),
 		'id'            => 'jumbotron-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s panel panel-default">',
 		'after_widget'  => '</aside>',
@@ -69,7 +73,7 @@ function indigo_bootville_lite_widgets_init() {
 
 	// Jumbotron widgets second row
 	register_sidebar(array(
-		'name'          => __( 'Jumbotron 4', 'bootville' ),
+		'name'          => __( 'Jumbotron 4', 'bootville-lite' ),
 		'id'            => 'jumbotron-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s panel panel-default">',
 		'after_widget'  => '</aside>',
@@ -78,7 +82,7 @@ function indigo_bootville_lite_widgets_init() {
 	) );
 
 	register_sidebar(array(
-		'name'          => __( 'Jumbotron 5', 'bootville' ),
+		'name'          => __( 'Jumbotron 5', 'bootville-lite' ),
 		'id'            => 'jumbotron-5',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s panel panel-default">',
 		'after_widget'  => '</aside>',
@@ -87,7 +91,7 @@ function indigo_bootville_lite_widgets_init() {
 	) );
 
 	register_sidebar(array(
-		'name'          => __( 'Jumbotron 6', 'bootville' ),
+		'name'          => __( 'Jumbotron 6', 'bootville-lite' ),
 		'id'            => 'jumbotron-6',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s panel panel-default">',
 		'after_widget'  => '</aside>',
